@@ -8,16 +8,19 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
       <p>Viết chương trình nhập vào thông tin 1 mặt hàng Tên , số lượng , đơn giá . Tính và xuất tiền phải trả dựa theo quy tắc : Nếu mua với số lượng từ 50 đến 100 sẽ được giảm 8 % , mua với số lượng trên 100 thì số lượng từ 101 trở đi sẽ được giảm 12 % . </p>
-
-      <input id="matHang" type="text" placeholder="Nhập tên mặt hàng">
-      <input id="soLuong" type="text" placeholder="Nhập số lượng">
-      <input id="donGia" type="text" placeholder="Nhập đơn giá">
+      <label for="text">Tên mặt hàng:</label> 
+      <input id="matHang" type="text" placeholder="Nhập tên mặt hàng" autofocus>
+      <label for="text">Số lượng sản phẩm:</label>
+      <input id="soLuong" type="text" placeholder="Nhập số lượng" autofocus>
+      <label for="text">Đơn giá:</label>
+      <input id="donGia" type="text" placeholder="Nhập đơn giá" autofocus>
       <button id="btnClick" class="btn btn-success">Tính tổng hóa đơn phải trả</button>
-      <div id="show"></div>
-
+      <div id="show" class="showinfo"></div>
 
 
     <!-- Optional JavaScript -->

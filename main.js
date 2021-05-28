@@ -4,20 +4,23 @@ document.getElementById("btnClick").onclick = function(){
     var matHang = document.getElementById("matHang").value;
     var slg = document.getElementById("soLuong").value;
     var donGia = document.getElementById("donGia").value;
-    var tongTien;
+    var tongTien, info;
+    info = "<span>Mặt hàng " + matHang + "</span>"; 
+    info += "<span> có số lượng " + slg + "</span>"; 
+    info += "<span> với đơn giá " + donGia + "đ </span>"; 
     if (slg > 100){
-        // [49 * giá] + [51 * giá * 92%] + [(slg - 100) * giá * 88%];
         tongTien = (49 * donGia) + (51 * donGia * 92/100) + ((slg - 100) * donGia * 88/100);
+        info +=  "<div> Tổng tiền phải trả là: " + tongTien + "đ</div>";
+        document.getElementById("show").innerHTML = info;
     } else if (slg >= 50 && slg <= 100 ) {
-            // [49 * giá] + [(slg-49) * giá * 92%];
             tongTien = (49 * donGia) + ((slg - 49) * donGia * 92/100);
+            info +=  "<div> Tổng tiền phải trả là: " + tongTien + "đ</div>";
+            document.getElementById("show").innerHTML = info;
         } else if (slg > 0 && slg < 50 ){
-                // slg * DG;
                 tongTien = slg * donGia;
+                info +=  "<div> Tổng tiền phải trả là: " + tongTien + "đ</div>";
+                document.getElementById("show").innerHTML = info;
             } else {
-                    document.getElementById("show").innerHTML = "nhập sai";
-                    // console.log("nhập sai");
+                    document.getElementById("show").innerHTML = "Bạn đang nhập số lượng là 0 hoặc nhỏ hơn 0!";
                 }
-    var info = "<div>Tổng tiền phải trả là: " + tongTien + "đ </div>";
-    document.getElementById("show").innerHTML = info;
 };
